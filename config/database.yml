@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= Rails.application.credentials.development[:postgres_username] %>
+  password: <%= Rails.application.credentials.development[:postgres_password] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: magicbooks_backend_development
+
+test:
+  <<: *default
+  database: magicbooks_backend_test
+
+production:
+  <<: *default
+  database: magicbooks_backend_production
+  username: magicbooks_backend
+  password: <%= ENV['MAGICBOOKS_BACKEND_DATABASE_PASSWORD'] %>
