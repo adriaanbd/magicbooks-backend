@@ -8,3 +8,5 @@
 
 Book.create!(title: 'Heat', category: 'Action')
 Book.create!(title: 'Titanic', category: 'History')
+Book.create!(title: 'Learning Python the Hard Way', category: 'Learning')
+Book.create!(title: 'Dracula', category: 'Horror')
